@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Unpile Support - Get help with your reseller inventory app">
+    <meta name="robots" content="index, follow">
+    <title>Support - Unpile</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* CSS-only accordion FAQ styles */
+        .faq-item {
+            border: 1px solid var(--bg-divider);
+            border-radius: 0.5rem;
+            margin-bottom: 0.75rem;
+            overflow: hidden;
+        }
+
+        .faq-item input[type="checkbox"] {
+            display: none;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.25rem;
+            background: var(--bg-primary);
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--text-primary);
+            transition: background-color 0.2s ease;
+        }
+
+        .faq-question:hover {
+            background: var(--bg-secondary);
+        }
+
+        .faq-question::after {
+            content: "+";
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: var(--wine);
+            transition: transform 0.2s ease;
+            flex-shrink: 0;
+            margin-left: 1rem;
+        }
+
+        .faq-item input[type="checkbox"]:checked + .faq-question::after {
+            content: "-";
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            background: var(--white);
+        }
+
+        .faq-item input[type="checkbox"]:checked ~ .faq-answer {
+            max-height: 500px;
+            padding: 1rem 1.25rem;
+        }
+
+        .faq-answer p {
+            margin: 0;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Additional support page styles */
+        .contact-box {
+            background-color: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .contact-box p {
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-box p:last-child {
+            margin-bottom: 0;
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        .info-box {
+            background-color: var(--white);
+            border: 1px solid var(--bg-divider);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .info-box h3:first-child {
+            margin-top: 0;
+        }
+
+        .info-box .cta {
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--bg-divider);
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">Unpile</a>
+            <nav>
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+                <a href="support.html">Support</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <div class="container">
+            <h1>Support</h1>
+            <p class="subtitle">We're here to help you get the most out of Unpile.</p>
+
+            <!-- Contact Information -->
+            <h2>Contact Us</h2>
+            <div class="contact-box">
+                <p><strong>Email:</strong> <a href="mailto:support@unpileapp.com">support@unpileapp.com</a></p>
+                <p>We typically respond within 24-48 hours.</p>
+            </div>
+
+            <!-- FAQ Section -->
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <input type="checkbox" id="faq1">
+                    <label class="faq-question" for="faq1">How do I scan items?</label>
+                    <div class="faq-answer">
+                        <p>Open the camera by tapping the scan button on the home screen. Point your camera at the item you want to catalog, and Unpile will automatically analyze the image and suggest details like brand, category, color, and condition. You can take multiple photos to capture different angles.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <input type="checkbox" id="faq2">
+                    <label class="faq-question" for="faq2">How does AI identification work?</label>
+                    <div class="faq-answer">
+                        <p>Unpile uses Google Gemini, an advanced AI model, to analyze your item photos. When you scan an item, the AI examines the image to identify the brand, type of clothing, material, condition, and other relevant details. This helps you create accurate listings faster.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <input type="checkbox" id="faq3">
+                    <label class="faq-question" for="faq3">How do I delete my account?</label>
+                    <div class="faq-answer">
+                        <p>To delete your account and all associated data, go to <strong>Settings &gt; Account &gt; Delete Account</strong>. You'll be asked to confirm this action. Once deleted, all your inventory data, photos, and account information will be permanently removed and cannot be recovered.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <input type="checkbox" id="faq4">
+                    <label class="faq-question" for="faq4">What platforms can I list to?</label>
+                    <div class="faq-answer">
+                        <p>Unpile helps you prepare listings for popular reselling platforms including Depop, Poshmark, eBay, Grailed, and Mercari. You can use the keyboard extension to quickly paste your item details into any listing form on these platforms.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <input type="checkbox" id="faq5">
+                    <label class="faq-question" for="faq5">How does pricing guidance work?</label>
+                    <div class="faq-answer">
+                        <p>Unpile searches eBay's sold listings to find similar items and shows you what they actually sold for. This helps you price your items competitively based on real market data. You'll see a suggested price range based on comparable recent sales.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <input type="checkbox" id="faq6">
+                    <label class="faq-question" for="faq6">Is my data secure?</label>
+                    <div class="faq-answer">
+                        <p>Yes, your data is stored securely with encryption using Supabase, a trusted backend provider. We take your privacy seriously and only collect data necessary for the app to function. For full details, please review our <a href="privacy.html">Privacy Policy</a>.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <input type="checkbox" id="faq7">
+                    <label class="faq-question" for="faq7">How do I cancel my subscription?</label>
+                    <div class="faq-answer">
+                        <p>Subscriptions are managed through your device's app store. On iOS, go to <strong>Settings &gt; [Your Name] &gt; Subscriptions</strong> and select Unpile to cancel. On Android, open the <strong>Google Play Store &gt; Menu &gt; Subscriptions</strong> and select Unpile. Canceling will stop future charges, and you'll retain access until the end of your current billing period.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <input type="checkbox" id="faq8">
+                    <label class="faq-question" for="faq8">How do I use the keyboard extension?</label>
+                    <div class="faq-answer">
+                        <p>To enable the Unpile keyboard, go to your device's <strong>Settings &gt; General &gt; Keyboard &gt; Keyboards &gt; Add New Keyboard</strong> and select Unpile. Once enabled, you can switch to the Unpile keyboard while typing in any app to quickly paste your item details into listing forms on Depop, Poshmark, and other platforms.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bug Reporting -->
+            <h2>Report a Bug</h2>
+            <p>Found something not working correctly? Help us fix it by sending a detailed bug report.</p>
+
+            <div class="info-box">
+                <h3>What to Include</h3>
+                <ul>
+                    <li><strong>Device model:</strong> e.g., iPhone 15 Pro, Samsung Galaxy S24</li>
+                    <li><strong>OS version:</strong> e.g., iOS 18.2, Android 15</li>
+                    <li><strong>Steps to reproduce:</strong> What were you doing when the bug occurred?</li>
+                    <li><strong>Expected behavior:</strong> What should have happened?</li>
+                    <li><strong>Actual behavior:</strong> What happened instead?</li>
+                    <li><strong>Screenshots or recordings:</strong> If possible, include visuals</li>
+                </ul>
+
+                <p class="cta">Send bug reports to <a href="mailto:support@unpileapp.com?subject=Bug%20Report">support@unpileapp.com</a> with <strong>"Bug Report"</strong> in the subject line.</p>
+            </div>
+
+            <!-- Feature Requests -->
+            <h2>Feature Requests</h2>
+            <p>Have an idea that would make Unpile better? We'd love to hear it! Your feedback helps shape the future of the app.</p>
+
+            <div class="info-box">
+                <p>Send your suggestions to <a href="mailto:support@unpileapp.com?subject=Feature%20Request">support@unpileapp.com</a> with <strong>"Feature Request"</strong> in the subject line. Please include:</p>
+                <ul>
+                    <li>A clear description of the feature</li>
+                    <li>How it would help your reselling workflow</li>
+                    <li>Any examples from other apps (if applicable)</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="support.html">Support</a>
+            </div>
+            <p>&copy; 2026 Unpile. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
