@@ -1781,12 +1781,12 @@ a:hover {
 
 /* Hero Section */
 .hero {
-  min-height: 100vh;
   display: flex;
   align-items: flex-start;
-  padding: 120px 0 var(--space-16);
+  padding: 100px 0 var(--space-16);
+  padding-top: calc(100px + env(safe-area-inset-top));
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 /* Mobile: Stack hero content and visual vertically */
@@ -1794,12 +1794,15 @@ a:hover {
   width: 100%;
   display: flex;
   flex-direction: column;
+  gap: var(--space-8);
 }
 
-/* Desktop: Center vertically when there's room */
+/* Desktop: Full height hero with centered content */
 @media (min-width: 1024px) {
   .hero {
+    min-height: 100vh;
     align-items: center;
+    padding: 120px 0 var(--space-16);
   }
 }
 
@@ -1906,13 +1909,13 @@ a:hover {
   justify-content: center;
   align-items: center;
   position: relative;
-  margin-top: var(--space-12);
+  margin-top: 0;
 }
 
 /* Mobile: Smaller phone mockup */
 .hero-visual .phone-frame {
-  width: 220px;
-  height: 460px;
+  width: 200px;
+  height: 420px;
 }
 
 .hero-visual .phone-frame .phone-screen {
@@ -2830,10 +2833,7 @@ label[role="button"]:focus,
   padding-top: env(safe-area-inset-top);
 }
 
-/* Hero section safe area */
-.hero {
-  padding-top: calc(120px + env(safe-area-inset-top));
-}
+/* Hero section safe area - handled in main .hero rule */
 
 /* Footer safe area */
 .footer {
