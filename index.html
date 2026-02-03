@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Unpile - The inventory app for resellers. AI-powered scanning, smart pricing, and cross-platform listing for Depop, Poshmark, eBay, and Grailed.">
-    <meta name="keywords" content="reseller app, inventory management, Depop, Poshmark, eBay, Grailed, thrift reselling, AI scanning">
+    <meta name="description" content="Unpile - The AI-powered resale assistant. Find hidden value in your closet with instant item scanning, smart pricing from real eBay data, and one-tap listings for Depop, Poshmark, eBay, and more.">
+    <meta name="keywords" content="reseller app, thrift reselling, AI scanner, Depop, Poshmark, eBay, Grailed, inventory app, resale assistant">
     <meta name="author" content="Unpile">
     <meta name="robots" content="index, follow">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://unpile-app.github.io/">
-    <meta property="og:title" content="Unpile - The Inventory App for Resellers">
-    <meta property="og:description" content="AI-powered scanning, smart pricing, and cross-platform listing. Scan. Catalog. List. Repeat.">
+    <meta property="og:title" content="Unpile - Find Hidden Value in Your Closet">
+    <meta property="og:description" content="The AI-powered resale assistant. Scan items, get smart pricing, and generate listings for 8+ platforms in seconds.">
     <meta property="og:image" content="https://unpile-app.github.io/og-image.png">
     <meta property="og:site_name" content="Unpile">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://unpile-app.github.io/">
-    <meta name="twitter:title" content="Unpile - The Inventory App for Resellers">
-    <meta name="twitter:description" content="AI-powered scanning, smart pricing, and cross-platform listing. Scan. Catalog. List. Repeat.">
+    <meta name="twitter:title" content="Unpile - Find Hidden Value in Your Closet">
+    <meta name="twitter:description" content="The AI-powered resale assistant. Scan items, get smart pricing, and generate listings for 8+ platforms in seconds.">
     <meta name="twitter:image" content="https://unpile-app.github.io/og-image.png">
 
     <!-- Favicon -->
@@ -28,476 +28,407 @@
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 
-    <title>Unpile - The Inventory App for Resellers</title>
+    <title>Unpile - Find Hidden Value in Your Closet</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Landing Page Specific Styles */
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 120px 24px 80px;
-            background: linear-gradient(180deg, #FAFAFA 0%, #FFFFFF 100%);
-        }
-
-        .hero-content {
-            max-width: 680px;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            font-weight: 800;
-            color: var(--wine);
-            margin-bottom: 16px;
-            letter-spacing: -2px;
-        }
-
-        .tagline {
-            font-size: 1.75rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 24px;
-        }
-
-        .hero-description {
-            font-size: 1.25rem;
-            color: var(--text-secondary);
-            margin-bottom: 40px;
-            line-height: 1.7;
-        }
-
-        .app-store-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            background: var(--text-primary);
-            color: #FFFFFF;
-            padding: 16px 32px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.125rem;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .app-store-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-            text-decoration: none;
-            color: #FFFFFF;
-        }
-
-        .app-store-btn svg {
-            width: 28px;
-            height: 28px;
-        }
-
-        /* Features Section */
-        .features-section {
-            padding: 100px 24px;
-            background: #FFFFFF;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 60px;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 32px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .feature-card {
-            background: var(--bg-primary);
-            padding: 32px;
-            border-radius: 16px;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-        }
-
-        .feature-icon {
-            width: 56px;
-            height: 56px;
-            background: var(--wine);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-
-        .feature-icon svg {
-            width: 28px;
-            height: 28px;
-            color: #FFFFFF;
-        }
-
-        .feature-card h3 {
-            font-size: 1.375rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 12px;
-            margin-top: 0;
-        }
-
-        .feature-card p {
-            font-size: 1rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
-            margin-bottom: 0;
-        }
-
-        /* How It Works Section */
-        .how-it-works {
-            padding: 100px 24px;
-            background: var(--bg-primary);
-        }
-
-        .steps {
-            display: flex;
-            justify-content: center;
-            gap: 48px;
-            max-width: 1000px;
-            margin: 0 auto;
-            flex-wrap: wrap;
-        }
-
-        .step {
-            text-align: center;
-            flex: 1;
-            min-width: 250px;
-            max-width: 300px;
-        }
-
-        .step-number {
-            width: 64px;
-            height: 64px;
-            background: var(--wine);
-            color: #FFFFFF;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.75rem;
-            font-weight: 700;
-            margin: 0 auto 20px;
-        }
-
-        .step h3 {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 12px;
-            margin-top: 0;
-        }
-
-        .step p {
-            font-size: 1rem;
-            color: var(--text-secondary);
-            margin-bottom: 0;
-        }
-
-        /* Landing Page Header Override */
-        .landing-header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 100;
-            border-bottom: 1px solid var(--bg-divider);
-        }
-
-        .landing-header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 16px 24px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .landing-header nav {
-            display: flex;
-            gap: 32px;
-        }
-
-        .landing-header nav a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-
-        .landing-header nav a:hover {
-            color: var(--wine);
-        }
-
-        /* Landing Page Footer */
-        .landing-footer {
-            background: var(--text-primary);
-            color: #FFFFFF;
-            padding: 60px 24px 40px;
-            margin-top: 0;
-        }
-
-        .landing-footer .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .footer-links-row {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin-bottom: 32px;
-            flex-wrap: wrap;
-        }
-
-        .footer-links-row a {
-            color: #D4D4D4;
-            text-decoration: none;
-            font-size: 1rem;
-            transition: color 0.2s;
-        }
-
-        .footer-links-row a:hover {
-            color: #FFFFFF;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 32px;
-            border-top: 1px solid #404040;
-            width: 100%;
-        }
-
-        .footer-bottom p {
-            color: #737373;
-            font-size: 0.875rem;
-            margin-bottom: 8px;
-        }
-
-        .footer-bottom a {
-            color: var(--wine-light);
-            text-decoration: none;
-        }
-
-        .footer-bottom a:hover {
-            text-decoration: underline;
-        }
-
-        /* Responsive Design for Landing Page */
-        @media (max-width: 768px) {
-            .landing-header .container {
-                padding: 12px 16px;
-            }
-
-            .landing-header nav {
-                gap: 16px;
-            }
-
-            .landing-header nav a {
-                font-size: 0.875rem;
-            }
-
-            .hero {
-                padding: 100px 16px 60px;
-            }
-
-            .hero h1 {
-                font-size: 3rem;
-                letter-spacing: -1px;
-            }
-
-            .tagline {
-                font-size: 1.375rem;
-            }
-
-            .hero-description {
-                font-size: 1.0625rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-                margin-bottom: 40px;
-            }
-
-            .features-section,
-            .how-it-works {
-                padding: 60px 16px;
-            }
-
-            .features-grid {
-                gap: 20px;
-            }
-
-            .feature-card {
-                padding: 24px;
-            }
-
-            .steps {
-                gap: 32px;
-            }
-
-            .footer-links-row {
-                gap: 24px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .landing-header nav {
-                display: none;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .tagline {
-                font-size: 1.25rem;
-            }
-
-            .app-store-btn {
-                padding: 14px 24px;
-                font-size: 1rem;
-            }
-        }
-    </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- Header -->
-    <header class="landing-header">
-        <div class="container">
+    <header class="header">
+        <div class="container header-inner">
             <a href="/" class="logo">Unpile</a>
-            <nav>
+            <nav class="nav" aria-label="Main navigation">
                 <a href="#features">Features</a>
                 <a href="#how-it-works">How It Works</a>
+                <a href="#platforms">Platforms</a>
                 <a href="support.html">Support</a>
             </nav>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Unpile</h1>
-            <p class="tagline">Scan. Catalog. List. Repeat.</p>
-            <p class="hero-description">
-                The inventory app for resellers. AI-powered scanning, smart pricing, and cross-platform listing.
-            </p>
-            <a href="#" class="app-store-btn">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-                </svg>
-                Coming to App Store
-            </a>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="features-section" id="features">
-        <div class="container">
-            <h2 class="section-title">Built for Resellers</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
-                            <circle cx="12" cy="13" r="4"></circle>
-                        </svg>
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-bg"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <span class="hero-badge">AI-Powered Resale Assistant</span>
+                    <h1 class="hero-title">Find the hidden value in your closet</h1>
+                    <p class="hero-description">
+                        Point. Scan. Sell. Unpile uses AI to instantly identify your items,
+                        show you what they're really worth, and create perfect listings for
+                        any platform.
+                    </p>
+                    <p class="hero-cta-text">Your clothes are worth more than you think.</p>
+                    <div class="hero-actions">
+                        <a href="https://apps.apple.com/app/id6739981959" class="app-store-link" aria-label="Download Unpile on the App Store">
+                            <img src="app-store-badge.svg" alt="Download on the App Store" class="app-store-badge">
+                        </a>
+                        <a href="#how-it-works" class="btn btn-secondary">See How It Works</a>
                     </div>
-                    <h3>AI-Powered Scanning</h3>
-                    <p>Point your camera at any item and get instant details. Brand, size, color, condition - all detected automatically.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="12" y1="1" x2="12" y2="23"></line>
-                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-                        </svg>
+                <div class="hero-visual">
+                    <!-- Scanner Mockup -->
+                    <div class="phone-frame animate-float">
+                        <div class="phone-screen">
+                            <div class="phone-notch"></div>
+                            <div class="scanner-mockup">
+                                <div class="scanner-viewfinder">
+                                    <div class="scanner-frame"></div>
+                                    <p class="scanner-hint">Point at item to scan</p>
+                                </div>
+                                <div class="scanner-bottom">
+                                    <div class="scanner-btn"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <h3>Smart Pricing</h3>
-                    <p>See what similar items actually sold for on eBay. Price with confidence using real market data.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                        </svg>
-                    </div>
-                    <h3>Cross-Platform Listing</h3>
-                    <p>Copy your listing to Depop, Poshmark, eBay, Grailed, and more. One scan, endless possibilities.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
-                            <path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M6 12h.01M10 12h.01M14 12h.01M18 12h.01M6 16h12"></path>
-                        </svg>
-                    </div>
-                    <h3>Custom Keyboard</h3>
-                    <p>Paste listings anywhere with one tap. Our custom keyboard puts your inventory at your fingertips.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- How It Works Section -->
-    <section class="how-it-works" id="how-it-works">
-        <div class="container">
-            <h2 class="section-title">How It Works</h2>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Scan Your Item</h3>
-                    <p>Point your camera at the item. Our AI identifies brand, size, color, and more in seconds.</p>
+        <!-- Features Section -->
+        <section class="section bg-white" id="features">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Features</span>
+                    <h2 class="section-title">Everything you need to list faster</h2>
+                    <p class="section-description">
+                        Stop typing the same details over and over. Let AI do the heavy lifting
+                        so you can focus on finding your next great flip.
+                    </p>
                 </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Review & Edit</h3>
-                    <p>Check the AI-generated details and make any tweaks. Add your own description and set your price.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>List Everywhere</h3>
-                    <p>Copy your polished listing to any selling platform. Use our keyboard to paste it anywhere.</p>
+
+                <div class="features-grid stagger-children">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                                <circle cx="12" cy="13" r="4"></circle>
+                            </svg>
+                        </div>
+                        <h3>AI-Powered Scanning</h3>
+                        <p>Point your camera at any item. Our AI instantly identifies the brand, style, materials, and condition - no typing required.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="1" x2="12" y2="23"></line>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                        </div>
+                        <h3>Smart Pricing</h3>
+                        <p>See what similar items actually sold for on eBay. Price with confidence using real market data, not guesswork.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                            </svg>
+                        </div>
+                        <h3>Auto Listings</h3>
+                        <p>Get platform-ready titles and descriptions generated instantly. Optimized for Depop, Poshmark, eBay, and 5 more.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                                <path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M6 12h.01M10 12h.01M14 12h.01M18 12h.01M6 16h12"></path>
+                            </svg>
+                        </div>
+                        <h3>Magic Keyboard</h3>
+                        <p>Our iOS keyboard extension lets you paste listings directly into any app. One tap to insert your item details anywhere.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                                <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                            </svg>
+                        </div>
+                        <h3>Cloud Inventory</h3>
+                        <p>Your entire inventory synced across devices. Access your items anywhere, never lose track of what you have listed.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                            </svg>
+                        </div>
+                        <h3>Brand Detection</h3>
+                        <p>Instantly recognize 1000+ brands from photos. Our AI catches details you might miss, maximizing your item's value.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="section" id="how-it-works">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">How It Works</span>
+                    <h2 class="section-title">List in a flash</h2>
+                    <p class="section-description">
+                        From thrift haul to listed for sale in under a minute. Here's how.
+                    </p>
+                </div>
+
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Scan Your Item</h3>
+                        <p>Open the camera and point it at your item. Our AI analyzes the photo and identifies everything automatically.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>Review Details</h3>
+                        <p>Check the AI-generated title, description, price suggestion, and tags. Make any tweaks you want.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Paste & List</h3>
+                        <p>Use the Magic Keyboard to paste your listing directly into Depop, Poshmark, eBay, or any other app.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- App Showcase: Scanner -->
+        <section class="section bg-white">
+            <div class="container">
+                <div class="showcase">
+                    <div class="showcase-content">
+                        <span class="section-badge">AI Scanner</span>
+                        <h3>Just point and shoot</h3>
+                        <p>
+                            Our AI does the heavy lifting. It identifies the brand, figures out
+                            the style and category, estimates condition, and even suggests
+                            relevant tags. All from a single photo.
+                        </p>
+                        <p>
+                            Works with clothing, shoes, bags, accessories, and more. The more
+                            you use it, the smarter it gets at understanding your inventory.
+                        </p>
+                    </div>
+                    <div class="showcase-visual">
+                        <!-- Result Card Mockup -->
+                        <div class="phone-frame">
+                            <div class="phone-screen">
+                                <div class="phone-notch"></div>
+                                <div class="result-mockup">
+                                    <div class="result-header">
+                                        <div class="result-back">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M19 12H5M12 19l-7-7 7-7"/>
+                                            </svg>
+                                        </div>
+                                        <span class="result-title">Item Details</span>
+                                    </div>
+                                    <div class="result-image">
+                                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.4">
+                                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                            <circle cx="8.5" cy="8.5" r="1.5"/>
+                                            <polyline points="21 15 16 10 5 21"/>
+                                        </svg>
+                                    </div>
+                                    <div class="result-details">
+                                        <div class="result-row">
+                                            <span class="result-label">Brand</span>
+                                            <span class="result-value">Carhartt WIP</span>
+                                        </div>
+                                        <div class="result-row">
+                                            <span class="result-label">Category</span>
+                                            <span class="result-value">Jacket</span>
+                                        </div>
+                                        <div class="result-row">
+                                            <span class="result-label">Condition</span>
+                                            <span class="result-badge">Excellent</span>
+                                        </div>
+                                        <div class="result-row">
+                                            <span class="result-label">Suggested Price</span>
+                                            <span class="result-value result-price">$85 - $120</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- App Showcase: Keyboard -->
+        <section class="section">
+            <div class="container">
+                <div class="showcase reverse">
+                    <div class="showcase-content">
+                        <span class="section-badge">Magic Keyboard</span>
+                        <h3>List anywhere, instantly</h3>
+                        <p>
+                            The Magic Keyboard is a game-changer. Instead of copy-pasting
+                            between apps, just switch to the Unpile keyboard and tap your
+                            item to insert all its details.
+                        </p>
+                        <p>
+                            Works in Depop, Poshmark, eBay, Mercari, Facebook Marketplace,
+                            Instagram DMs - literally any app where you can type. Your
+                            inventory is always at your fingertips.
+                        </p>
+                    </div>
+                    <div class="showcase-visual">
+                        <!-- Keyboard Mockup -->
+                        <div class="phone-frame">
+                            <div class="phone-screen">
+                                <div class="phone-notch"></div>
+                                <div class="keyboard-mockup">
+                                    <div class="keyboard-app-preview">
+                                        <div class="keyboard-app-header"></div>
+                                        <div class="keyboard-textarea">
+                                            <span class="typed">Vintage Carhartt WIP Detroit Jacket in Tan. Size L. Excellent condition - no flaws. Classic workwear style that never goes out of fashion.</span>
+                                            <span class="cursor"></span>
+                                        </div>
+                                    </div>
+                                    <div class="keyboard-extension">
+                                        <div class="keyboard-items">
+                                            <div class="keyboard-item">
+                                                <div class="keyboard-item-img"></div>
+                                                <span class="keyboard-item-title">Carhartt Jacket</span>
+                                            </div>
+                                            <div class="keyboard-item" style="border-color: var(--divider);">
+                                                <div class="keyboard-item-img"></div>
+                                                <span class="keyboard-item-title">Nike Dunks</span>
+                                            </div>
+                                        </div>
+                                        <div class="keyboard-bar">
+                                            <div class="keyboard-key">ABC</div>
+                                            <div class="keyboard-key space"></div>
+                                            <div class="keyboard-key">return</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Platforms Section -->
+        <section class="section bg-white" id="platforms">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Platforms</span>
+                    <h2 class="section-title">One scan, eight platforms</h2>
+                    <p class="section-description">
+                        Generate optimized listings for all the major resale marketplaces.
+                        Each platform gets content tailored to its audience and format.
+                    </p>
+                </div>
+
+                <div class="platforms-grid">
+                    <span class="platform-badge platform-depop">
+                        <span class="dot"></span>
+                        Depop
+                    </span>
+                    <span class="platform-badge platform-ebay">
+                        <span class="dot"></span>
+                        eBay
+                    </span>
+                    <span class="platform-badge platform-poshmark">
+                        <span class="dot"></span>
+                        Poshmark
+                    </span>
+                    <span class="platform-badge platform-grailed">
+                        <span class="dot"></span>
+                        Grailed
+                    </span>
+                    <span class="platform-badge platform-vinted">
+                        <span class="dot"></span>
+                        Vinted
+                    </span>
+                    <span class="platform-badge platform-mercari">
+                        <span class="dot"></span>
+                        Mercari
+                    </span>
+                    <span class="platform-badge platform-vestiaire">
+                        <span class="dot"></span>
+                        Vestiaire
+                    </span>
+                    <span class="platform-badge platform-goat">
+                        <span class="dot"></span>
+                        GOAT
+                    </span>
+                </div>
+
+                <p class="text-center mt-8" style="color: var(--text-tertiary); font-size: 0.9375rem;">
+                    Note: Unpile generates listing content for these platforms.
+                    It does not automatically post to them - you copy the content using our keyboard
+                    and paste it into your listing.
+                </p>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>Ready to unpile your closet?</h2>
+                <p>
+                    That vintage jacket in the back? It could be worth $200. Find out in seconds.
+                </p>
+                <a href="https://apps.apple.com/app/id6739981959" class="app-store-link cta-badge" aria-label="Download Unpile on the App Store">
+                    <img src="app-store-badge.svg" alt="Download on the App Store" class="app-store-badge">
+                </a>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="landing-footer">
+    <footer class="footer">
         <div class="container">
-            <div class="footer-links-row">
-                <a href="privacy.html">Privacy Policy</a>
-                <a href="terms.html">Terms of Service</a>
-                <a href="support.html">Support</a>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="/" class="logo">Unpile</a>
+                    <p>The AI-powered resale assistant for Gen Z thrift resellers. Find hidden value, list in a flash.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <div class="footer-links">
+                        <a href="#features">Features</a>
+                        <a href="#how-it-works">How It Works</a>
+                        <a href="#platforms">Platforms</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <div class="footer-links">
+                        <a href="support.html">Help Center</a>
+                        <a href="mailto:thomasmulugeta88@gmail.com">Contact Us</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <div class="footer-links">
+                        <a href="privacy.html">Privacy Policy</a>
+                        <a href="terms.html">Terms of Service</a>
+                    </div>
+                </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Unpile. All rights reserved.</p>
-                <p><a href="mailto:support@unpileapp.com">support@unpileapp.com</a></p>
+                <p>&copy; 2025-2026 Unpile. All rights reserved.</p>
+                <p><a href="mailto:thomasmulugeta88@gmail.com">thomasmulugeta88@gmail.com</a></p>
             </div>
         </div>
     </footer>
