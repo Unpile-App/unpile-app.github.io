@@ -1,6 +1,6 @@
 /* ==========================================================================
    Unpile Website - Redesigned
-   Premium, editorial aesthetic for Gen Z resellers
+   Premium, editorial aesthetic for thrift resellers
    ========================================================================== */
 
 /* ==========================================================================
@@ -1783,14 +1783,24 @@ a:hover {
 .hero {
   min-height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   padding: 120px 0 var(--space-16);
   position: relative;
   overflow: hidden;
 }
 
+/* Mobile: Stack hero content and visual vertically */
 .hero > .container {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Desktop: Center vertically when there's room */
+@media (min-width: 1024px) {
+  .hero {
+    align-items: center;
+  }
 }
 
 .hero-bg {
