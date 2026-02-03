@@ -2,11 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="description" content="Unpile - The AI-powered resale assistant. Find hidden value in your closet with instant item scanning, smart pricing from real eBay data, and one-tap listings for Depop, Poshmark, eBay, and more.">
     <meta name="keywords" content="reseller app, thrift reselling, AI scanner, Depop, Poshmark, eBay, Grailed, inventory app, resale assistant">
     <meta name="author" content="Unpile">
     <meta name="robots" content="index, follow">
+
+    <!-- iOS Native Feel -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="theme-color" content="#FAFAFA">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -32,6 +38,21 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<script>
+// Keyboard accessibility for nav toggle
+document.addEventListener('DOMContentLoaded', function() {
+  var navToggle = document.querySelector('.nav-toggle');
+  if (navToggle) {
+    navToggle.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        var checkbox = document.getElementById('nav-toggle');
+        if (checkbox) checkbox.checked = !checkbox.checked;
+      }
+    });
+  }
+});
+</script>
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- Header -->
@@ -44,11 +65,23 @@
                 <a href="#platforms">Platforms</a>
                 <a href="support.html">Support</a>
             </nav>
-            <button class="nav-toggle" aria-label="Toggle navigation">
+            <!-- Mobile Menu (CSS-only checkbox hack) -->
+            <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" aria-hidden="true">
+            <label for="nav-toggle" class="nav-toggle" aria-label="Toggle navigation menu" role="button" tabindex="0">
                 <span></span>
                 <span></span>
                 <span></span>
-            </button>
+            </label>
+            <nav class="mobile-nav" aria-label="Mobile navigation">
+                <label for="nav-toggle" class="mobile-nav-link"><a href="#features">Features</a></label>
+                <label for="nav-toggle" class="mobile-nav-link"><a href="#how-it-works">How It Works</a></label>
+                <label for="nav-toggle" class="mobile-nav-link"><a href="#platforms">Platforms</a></label>
+                <a href="support.html" class="mobile-nav-link-direct">Support</a>
+                <a href="https://apps.apple.com/app/id6739981959" class="mobile-nav-cta">
+                    <img src="app-store-badge.svg" alt="Download on the App Store" class="mobile-app-badge" loading="lazy">
+                </a>
+            </nav>
+            <label for="nav-toggle" class="mobile-nav-overlay" aria-hidden="true"></label>
         </div>
     </header>
 
@@ -68,7 +101,7 @@
                     <p class="hero-cta-text">Your clothes are worth more than you think.</p>
                     <div class="hero-actions">
                         <a href="https://apps.apple.com/app/id6739981959" class="app-store-link" aria-label="Download Unpile on the App Store">
-                            <img src="app-store-badge.svg" alt="Download on the App Store" class="app-store-badge">
+                            <img src="app-store-badge.svg" alt="Download on the App Store" class="app-store-badge" loading="lazy">
                         </a>
                         <a href="#how-it-works" class="btn btn-secondary">See How It Works</a>
                     </div>
@@ -76,15 +109,51 @@
                 <div class="hero-visual">
                     <!-- Scanner Mockup -->
                     <div class="phone-frame animate-float">
-                        <div class="phone-screen">
+                        <div class="phone-screen scanner-screen">
                             <div class="phone-notch"></div>
                             <div class="scanner-mockup">
-                                <div class="scanner-viewfinder">
-                                    <div class="scanner-frame"></div>
-                                    <p class="scanner-hint">Point at item to scan</p>
+                                <!-- Top Bar -->
+                                <div class="scanner-top-bar">
+                                    <button class="scanner-icon-btn">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                                        </svg>
+                                    </button>
+                                    <div class="scanner-mode-toggle">
+                                        <span class="mode-option mode-active">Single</span>
+                                        <span class="mode-option">Batch</span>
+                                    </div>
+                                    <button class="scanner-icon-btn scanner-bucket-btn">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                                            <path d="M16 10a4 4 0 0 1-8 0"></path>
+                                        </svg>
+                                        <span class="bucket-badge">99+</span>
+                                    </button>
                                 </div>
-                                <div class="scanner-bottom">
-                                    <div class="scanner-btn"></div>
+                                <!-- Viewfinder -->
+                                <div class="scanner-viewfinder">
+                                    <div class="scanner-capture-frame"></div>
+                                </div>
+                                <!-- Bottom Controls -->
+                                <div class="scanner-controls">
+                                    <button class="scanner-control-btn">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                            <polyline points="21 15 16 10 5 21"></polyline>
+                                        </svg>
+                                    </button>
+                                    <button class="scanner-shutter-btn">
+                                        <span class="shutter-inner"></span>
+                                    </button>
+                                    <button class="scanner-control-btn scanner-analyze-btn">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2Z"></path>
+                                        </svg>
+                                        <span class="analyze-text">Analyze</span>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -206,62 +275,145 @@
             </div>
         </section>
 
-        <!-- App Showcase: Scanner -->
+        <!-- App Showcase: VibeCard (Item Details) -->
         <section class="section bg-white">
             <div class="container">
                 <div class="showcase">
                     <div class="showcase-content">
-                        <span class="section-badge">AI Scanner</span>
-                        <h3>Just point and shoot</h3>
+                        <span class="section-badge">Item Details</span>
+                        <h3>Your complete listing, ready to go</h3>
                         <p>
-                            Our AI does the heavy lifting. It identifies the brand, figures out
-                            the style and category, estimates condition, and even suggests
-                            relevant tags. All from a single photo.
+                            After scanning, you get a full breakdown: optimal pricing based on
+                            real sold data, AI-generated descriptions tailored for each platform,
+                            and smart hashtags to maximize visibility.
                         </p>
                         <p>
-                            Works with clothing, shoes, bags, accessories, and more. The more
-                            you use it, the smarter it gets at understanding your inventory.
+                            Edit any field, switch conditions to see price changes, and copy
+                            everything with one tap. It's your digital inventory assistant.
                         </p>
                     </div>
                     <div class="showcase-visual">
-                        <!-- Result Card Mockup -->
+                        <!-- VibeCard Mockup -->
                         <div class="phone-frame">
                             <div class="phone-screen">
                                 <div class="phone-notch"></div>
-                                <div class="result-mockup">
-                                    <div class="result-header">
-                                        <div class="result-back">
-                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                <path d="M19 12H5M12 19l-7-7 7-7"/>
+                                <div class="vibecard-mockup">
+                                    <!-- Condition Selector -->
+                                    <div class="vibecard-condition-section">
+                                        <span class="vibecard-section-label">CONDITION</span>
+                                        <div class="vibecard-condition-scroll">
+                                            <div class="vibecard-chip">
+                                                <span class="vibecard-chip-icon">✨</span>
+                                                <span class="vibecard-chip-text">New w/ Tags</span>
+                                                <span class="vibecard-chip-sub">NWT</span>
+                                            </div>
+                                            <div class="vibecard-chip">
+                                                <span class="vibecard-chip-icon">✨</span>
+                                                <span class="vibecard-chip-text">New w/o Tags</span>
+                                            </div>
+                                            <div class="vibecard-chip vibecard-chip-active">
+                                                <span class="vibecard-chip-icon">🌟</span>
+                                                <span class="vibecard-chip-text">Excellent</span>
+                                                <span class="vibecard-chip-sub">Gently Used</span>
+                                            </div>
+                                            <div class="vibecard-chip">
+                                                <span class="vibecard-chip-icon">♻️</span>
+                                                <span class="vibecard-chip-text">Good</span>
+                                                <span class="vibecard-chip-sub">Avg Wear</span>
+                                            </div>
+                                            <div class="vibecard-chip vibecard-chip-custom">
+                                                <span class="vibecard-chip-icon">+</span>
+                                                <span class="vibecard-chip-text">Custom</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Hero Valuation Block -->
+                                    <div class="vibecard-valuation">
+                                        <div class="vibecard-valuation-header">
+                                            <svg class="vibecard-trending-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                                                <polyline points="17 6 23 6 23 12"></polyline>
                                             </svg>
+                                            <span>OPTIMAL LIST PRICE</span>
                                         </div>
-                                        <span class="result-title">Item Details</span>
+                                        <div class="vibecard-big-price">$85</div>
+                                        <div class="vibecard-price-range">Range: $65 - $120</div>
+                                        <div class="vibecard-comps">Based on 12 sold listings</div>
                                     </div>
-                                    <div class="result-image">
-                                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.4">
-                                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                                            <circle cx="8.5" cy="8.5" r="1.5"/>
-                                            <polyline points="21 15 16 10 5 21"/>
-                                        </svg>
+
+                                    <!-- Item Identity Grid -->
+                                    <div class="vibecard-identity">
+                                        <div class="vibecard-identity-header">
+                                            <span class="vibecard-section-label">ITEM IDENTITY</span>
+                                            <div class="vibecard-regenerate-btn">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
+                                                    <path d="M12 3l1.5 1.5L12 6m0 0a9 9 0 11-9 9"></path>
+                                                </svg>
+                                                <span>Regenerate</span>
+                                            </div>
+                                        </div>
+                                        <div class="vibecard-identity-grid">
+                                            <div class="vibecard-identity-row">
+                                                <span class="vibecard-identity-label">Brand</span>
+                                                <span class="vibecard-identity-value">Carhartt WIP</span>
+                                            </div>
+                                            <div class="vibecard-identity-row">
+                                                <span class="vibecard-identity-label">Type</span>
+                                                <span class="vibecard-identity-value">Detroit Jacket</span>
+                                            </div>
+                                            <div class="vibecard-identity-row">
+                                                <span class="vibecard-identity-label">Color</span>
+                                                <span class="vibecard-identity-value">Hamilton Brown</span>
+                                            </div>
+                                            <div class="vibecard-identity-row">
+                                                <span class="vibecard-identity-label">Size</span>
+                                                <span class="vibecard-identity-value">L</span>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="result-details">
-                                        <div class="result-row">
-                                            <span class="result-label">Brand</span>
-                                            <span class="result-value">Carhartt WIP</span>
-                                        </div>
-                                        <div class="result-row">
-                                            <span class="result-label">Category</span>
-                                            <span class="result-value">Jacket</span>
-                                        </div>
-                                        <div class="result-row">
-                                            <span class="result-label">Condition</span>
-                                            <span class="result-badge">Excellent</span>
-                                        </div>
-                                        <div class="result-row">
-                                            <span class="result-label">Suggested Price</span>
-                                            <span class="result-value result-price">$85 - $120</span>
+
+                                    <!-- Platform Dropdown -->
+                                    <div class="vibecard-platform">
+                                        <div class="vibecard-platform-pill">
+                                            <span class="vibecard-platform-icon">⚡</span>
+                                            <span class="vibecard-platform-name">Depop</span>
+                                            <span class="vibecard-platform-arrow">▼</span>
                                         </div>
                                     </div>
+
+                                    <!-- Description Section -->
+                                    <div class="vibecard-description">
+                                        <span class="vibecard-section-label">DESCRIPTION</span>
+                                        <div class="vibecard-description-text">
+                                            Carhartt WIP Detroit Jacket in Hamilton Brown. Classic workwear piece with that perfect vintage aesthetic. Blanket lined for extra warmth. Excellent condition with minor fading that adds character. True to size L.
+                                        </div>
+                                    </div>
+
+                                    <!-- Tags Section -->
+                                    <div class="vibecard-tags">
+                                        <span class="vibecard-section-label">TAGS</span>
+                                        <div class="vibecard-tags-row">
+                                            <span class="vibecard-tag tag-blue">#carhartt</span>
+                                            <span class="vibecard-tag tag-purple">#workwear</span>
+                                            <span class="vibecard-tag tag-amber">#vintage</span>
+                                            <span class="vibecard-tag tag-green">#streetwear</span>
+                                            <span class="vibecard-tag tag-pink">#gorpcore</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Copy Buttons -->
+                                    <div class="vibecard-actions">
+                                        <button class="vibecard-copy-btn vibecard-copy-primary">Copy Description</button>
+                                        <div class="vibecard-copy-row">
+                                            <button class="vibecard-copy-btn">Copy All</button>
+                                            <button class="vibecard-copy-btn">Copy Title</button>
+                                            <button class="vibecard-copy-btn">Copy Tags</button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Scroll indicator -->
+                                    <div class="vibecard-scroll-indicator"></div>
                                 </div>
                             </div>
                         </div>
@@ -270,7 +422,7 @@
             </div>
         </section>
 
-        <!-- App Showcase: Keyboard -->
+        <!-- App Showcase: Magic Keyboard -->
         <section class="section">
             <div class="container">
                 <div class="showcase reverse">
@@ -289,33 +441,112 @@
                         </p>
                     </div>
                     <div class="showcase-visual">
-                        <!-- Keyboard Mockup -->
+                        <!-- Magic Keyboard Mockup -->
                         <div class="phone-frame">
                             <div class="phone-screen">
                                 <div class="phone-notch"></div>
-                                <div class="keyboard-mockup">
-                                    <div class="keyboard-app-preview">
-                                        <div class="keyboard-app-header"></div>
-                                        <div class="keyboard-textarea">
-                                            <span class="typed">Vintage Carhartt WIP Detroit Jacket in Tan. Size L. Excellent condition - no flaws. Classic workwear style that never goes out of fashion.</span>
-                                            <span class="cursor"></span>
+                                <div class="magic-keyboard-mockup">
+                                    <!-- App preview area -->
+                                    <div class="mk-app-area">
+                                        <div class="mk-app-header">
+                                            <span class="mk-app-title">Depop</span>
+                                        </div>
+                                        <div class="mk-textarea">
+                                            <span class="mk-typed">Carhartt WIP Detroit Jacket in Hamilton Brown. Classic workwear piece with that perfect vintage aesthetic. Blanket lined for warmth. Excellent condition.</span>
+                                            <span class="mk-cursor"></span>
                                         </div>
                                     </div>
-                                    <div class="keyboard-extension">
-                                        <div class="keyboard-items">
-                                            <div class="keyboard-item">
-                                                <div class="keyboard-item-img"></div>
-                                                <span class="keyboard-item-title">Carhartt Jacket</span>
+
+                                    <!-- Keyboard Extension -->
+                                    <div class="mk-keyboard">
+                                        <!-- Platform Tabs -->
+                                        <div class="mk-header">
+                                            <div class="mk-platform-pill mk-platform-active">
+                                                <span class="mk-platform-icon">⚡</span>
+                                                <span>Depop</span>
+                                                <span class="mk-dropdown">▼</span>
                                             </div>
-                                            <div class="keyboard-item" style="border-color: var(--divider);">
-                                                <div class="keyboard-item-img"></div>
-                                                <span class="keyboard-item-title">Nike Dunks</span>
+                                            <div class="mk-templates-pill">
+                                                <span>📝</span>
+                                                <span>Templates</span>
+                                                <span class="mk-dropdown">▼</span>
                                             </div>
                                         </div>
-                                        <div class="keyboard-bar">
-                                            <div class="keyboard-key">ABC</div>
-                                            <div class="keyboard-key space"></div>
-                                            <div class="keyboard-key">return</div>
+
+                                        <!-- Items Carousel -->
+                                        <div class="mk-items-scroll">
+                                            <div class="mk-item mk-item-selected">
+                                                <div class="mk-item-thumb">
+                                                    <span class="mk-item-abbr">CW</span>
+                                                </div>
+                                                <span class="mk-item-price">$85</span>
+                                            </div>
+                                            <div class="mk-item">
+                                                <div class="mk-item-thumb">
+                                                    <span class="mk-item-abbr">ND</span>
+                                                </div>
+                                                <span class="mk-item-price">$120</span>
+                                            </div>
+                                            <div class="mk-item">
+                                                <div class="mk-item-thumb">
+                                                    <span class="mk-item-abbr">SY</span>
+                                                </div>
+                                                <span class="mk-item-price">$45</span>
+                                            </div>
+                                            <div class="mk-item">
+                                                <div class="mk-item-thumb">
+                                                    <span class="mk-item-abbr">PL</span>
+                                                </div>
+                                                <span class="mk-item-price">$65</span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Magic Buttons -->
+                                        <div class="mk-magic-buttons">
+                                            <button class="mk-magic-btn mk-magic-active">
+                                                <span class="mk-magic-icon">✨</span>
+                                                <span class="mk-magic-label">Title</span>
+                                            </button>
+                                            <button class="mk-magic-btn mk-magic-active">
+                                                <span class="mk-magic-icon">📝</span>
+                                                <span class="mk-magic-label">Desc</span>
+                                            </button>
+                                            <button class="mk-magic-btn mk-magic-active">
+                                                <span class="mk-magic-icon">💰</span>
+                                                <span class="mk-magic-label">Price</span>
+                                            </button>
+                                            <button class="mk-magic-btn mk-magic-active">
+                                                <span class="mk-magic-icon">#</span>
+                                                <span class="mk-magic-label">Tags</span>
+                                            </button>
+                                        </div>
+
+                                        <!-- Selected Item Indicator -->
+                                        <div class="mk-selected-indicator">
+                                            <span class="mk-indicator-dot"></span>
+                                            <span class="mk-indicator-text">Carhartt WIP Detroit Jacket</span>
+                                        </div>
+
+                                        <!-- Bottom Bar -->
+                                        <div class="mk-bottom-bar">
+                                            <button class="mk-globe-btn">
+                                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <circle cx="12" cy="12" r="10"></circle>
+                                                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                                                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                                                </svg>
+                                            </button>
+                                            <div class="mk-branding">
+                                                <span class="mk-brand-icon">⚡</span>
+                                                <span class="mk-brand-text">Unpile</span>
+                                            </div>
+                                            <button class="mk-delete-btn">
+                                                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"></path>
+                                                    <line x1="18" y1="9" x2="12" y2="15"></line>
+                                                    <line x1="12" y1="9" x2="18" y2="15"></line>
+                                                </svg>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -389,7 +620,7 @@
                     That vintage jacket in the back? It could be worth $200. Find out in seconds.
                 </p>
                 <a href="https://apps.apple.com/app/id6739981959" class="app-store-link cta-badge" aria-label="Download Unpile on the App Store">
-                    <img src="app-store-badge.svg" alt="Download on the App Store" class="app-store-badge">
+                    <img src="app-store-badge.svg" alt="Download on the App Store" class="app-store-badge" loading="lazy">
                 </a>
             </div>
         </section>
