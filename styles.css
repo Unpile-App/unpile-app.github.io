@@ -1820,6 +1820,8 @@ a:hover {
 
 .hero-content {
   max-width: 640px;
+  flex-shrink: 0;
+  display: block;
 }
 
 .hero-badge {
@@ -1910,32 +1912,23 @@ a:hover {
   align-items: center;
   position: relative;
   margin-top: 0;
+  flex-shrink: 0;
 }
 
-/* Mobile: Smaller phone mockup */
+/* Mobile: Phone mockup needs minimum 260px width for scanner UI elements */
 .hero-visual .phone-frame {
-  width: 200px;
-  height: 420px;
+  width: 260px;
+  height: 540px;
+  flex-shrink: 0;
 }
 
 .hero-visual .phone-frame .phone-screen {
-  border-radius: 26px;
+  border-radius: 30px;
 }
 
 .hero-visual .phone-frame .phone-notch {
   width: 100px;
   height: 24px;
-}
-
-@media (min-width: 480px) {
-  .hero-visual .phone-frame {
-    width: 260px;
-    height: 540px;
-  }
-
-  .hero-visual .phone-frame .phone-screen {
-    border-radius: 30px;
-  }
 }
 
 @media (min-width: 768px) {
