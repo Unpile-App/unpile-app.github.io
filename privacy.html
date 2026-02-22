@@ -50,7 +50,7 @@
         <div class="container container-content content">
             <h1>Privacy Policy</h1>
             <p class="subtitle">Your privacy matters to us. This policy explains how Unpile collects, uses, and protects your information.</p>
-            <p class="effective-date"><strong>Last Updated:</strong> February 2, 2026<br><strong>Effective Date:</strong> February 2, 2026</p>
+            <p class="effective-date"><strong>Last Updated:</strong> February 22, 2026<br><strong>Effective Date:</strong> February 2, 2026</p>
 
             <div class="highlight-box">
                 <p><strong>Summary:</strong> Unpile is an inventory management app for resellers. We collect only the data necessary to provide our services. Your photos are processed by AI for item identification, and your inventory data is stored securely. You can delete your account and all associated data at any time through the app settings.</p>
@@ -93,6 +93,16 @@
                         <td><strong>Inventory Data</strong></td>
                         <td>Core app functionality - storing your listings</td>
                         <td>Supabase (secure storage)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Usage Analytics</strong></td>
+                        <td>Understand feature usage to improve the app</td>
+                        <td>PostHog (anonymous analytics)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Crash Reports</strong></td>
+                        <td>Identify and fix bugs</td>
+                        <td>Sentry (error monitoring)</td>
                     </tr>
                     <tr>
                         <td><strong>Keyboard Input</strong></td>
@@ -168,6 +178,25 @@
                 </ul>
             </div>
 
+            <div class="service-item">
+                <h4><span class="service-name">PostHog</span> - Usage Analytics</h4>
+                <ul>
+                    <li><strong>Purpose:</strong> Anonymous usage analytics to understand how features are used and improve the app experience</li>
+                    <li><strong>Data sent:</strong> Feature interactions (e.g., scans started, paywall views), device type, and app version. Events are linked to an anonymous user identifier.</li>
+                    <li><strong>Not collected:</strong> Advertising identifiers (IDFA), location data, or personal content</li>
+                    <li><strong>Privacy Policy:</strong> <a href="https://posthog.com/privacy" target="_blank" rel="noopener noreferrer">https://posthog.com/privacy</a></li>
+                </ul>
+            </div>
+
+            <div class="service-item">
+                <h4><span class="service-name">Sentry</span> - Error Monitoring</h4>
+                <ul>
+                    <li><strong>Purpose:</strong> Captures crash reports and errors to help us fix bugs and improve app stability</li>
+                    <li><strong>Data sent:</strong> Crash logs, error details, device type, and app version</li>
+                    <li><strong>Privacy Policy:</strong> <a href="https://sentry.io/privacy/" target="_blank" rel="noopener noreferrer">https://sentry.io/privacy/</a></li>
+                </ul>
+            </div>
+
             <h2>3. How We Use Your Information</h2>
 
             <p>We use your information solely to:</p>
@@ -221,7 +250,7 @@
             <ul>
                 <li><strong>Marketing emails:</strong> Unsubscribe link in every email (note: we send minimal marketing)</li>
                 <li><strong>Push notifications:</strong> Manage in your device settings</li>
-                <li><strong>Analytics:</strong> Contact us to opt out of usage analytics</li>
+                <li><strong>Analytics:</strong> Usage analytics are anonymous and do not use advertising identifiers. To request removal of your analytics data, contact us at <a href="mailto:thomasmulugeta88@gmail.com">thomasmulugeta88@gmail.com</a></li>
             </ul>
 
             <h2>7. Regional Privacy Rights</h2>
